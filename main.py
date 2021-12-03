@@ -23,6 +23,7 @@ def power_con_report():
     power_consumption = int(gamma, 2) * int(epsilon, 2)
     print(f"The power consumption rating is: {power_consumption}.")
 
+
 def life_support_rating():
     with open("day-3-input.txt") as file:
         numbers = file.readlines()
@@ -45,7 +46,7 @@ def life_support_rating():
 
     fewer_list = numbers
 
-    for c in range(len(numbers[0]) - 4):
+    for c in range(len(numbers[0])):
         zero_list = []
         one_list = []
 
@@ -59,6 +60,9 @@ def life_support_rating():
             fewer_list = zero_list
         else:
             fewer_list = one_list
+        
+        if len(fewer_list) == 1:
+            break
 
     co2_scrubber_rating = int(fewer_list[0], 2)
     oxygen_generator_rating = int(bigger_list[0], 2)
